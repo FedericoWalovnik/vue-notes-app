@@ -57,8 +57,11 @@ body {
   margin-top: 3.5rem;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fit, 28rem);
   grid-auto-rows: 30vh; }
+  @media (max-width: 37.5em) {
+    .notes-container {
+      grid-template-columns: repeat(auto-fit, 1fr); } }
 
 .note {
   position: relative;
