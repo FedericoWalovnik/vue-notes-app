@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1rem = 10px
+  font-family: "Nunito sans", sans-serif;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 45%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+.app {
+  display: flex;
+  font-size: 1.6rem;
+}

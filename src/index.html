@@ -3,12 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://unpkg.com/vue@next" defer></script>
 
     <title>Vue Notes App</title>
 </head>
 <body>
+    <Section class="app">
+        <section class="sidebar">
+            <p class="sidebar__logo">Vue PostIt</p>
+            <i class="sidebar__addButton fas fa-plus-circle"></i>
+        </section>
+        <section class="content">
+            <h1 class="title-principal">Notes</h1>
+            <div class="notes-container">
+                <div class="note">
+                    <i class="notes__deleteButton fas fa-times"></i>
+                    <p class="paragraph-principal">Here is where the user will put the content of the note</p>
+                    <p class="paragraph-secundary">Dec 10, 2020</p>
+                    <i class="notes__editButton fas fa-pen"></i>
+                </div>
+                <div class="note">
+                    <i class="notes__deleteButton fas fa-times"></i>
+                    <p class="paragraph-principal">Here is where the user will put the content of the note</p>
+                    <p class="paragraph-secundary">Dec 10, 2020</p>
+                    <i class="notes__editButton fas fa-pen"></i>
+                </div>
+                <div class="note">
+                    <i class="notes__deleteButton fas fa-times"></i>
+                    <p class="paragraph-principal">Here is where the user will put the content of the note</p>
+                    <p class="paragraph-secundary">Dec 10, 2020</p>
+                    <i class="notes__editButton fas fa-pen"></i>
+                </div>
+                <div class="note">
+                    <i class="notes__deleteButton fas fa-times"></i>
+                    <p class="paragraph-principal">Here is where the user will put the content of the note</p>
+                    <p class="paragraph-secundary">Dec 10, 2020</p>
+                    <i class="notes__editButton fas fa-pen"></i>
+                </div>
+                <div class="note">
+                    <i class="notes__deleteButton fas fa-times"></i>
+                    <p class="paragraph-principal">Here is where the user will put the content of the note</p>
+                    <p class="paragraph-secundary">Dec 10, 2020</p>
+                    <i class="notes__editButton fas fa-pen"></i>
+                </div>
+            </div>
+        </section>
+    </Section>
     
 </body>
 </html>
