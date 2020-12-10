@@ -50,22 +50,48 @@ body {
   font-weight: 300; }
 
 .content {
-  margin: 6.5rem 0 0 5rem; }
+  margin: 6.5rem 5rem 0 5rem;
+  flex: 1 1 90vw; }
 
 .notes-container {
-  margin-top: 3.5rem; }
+  margin-top: 3.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-auto-rows: 30vh; }
 
 .note {
-  background-color: #73cac4;
-  border-radius: 0.5rem;
-  padding: 1rem; }
-
-.sidebar {
+  position: relative;
   display: flex;
   flex-direction: column;
-  flex: 0 1 min-content;
+  background-color: #73cac4;
+  border-radius: 0.7rem;
+  padding: 1rem; }
+  .note__deleteButton {
+    align-self: flex-end;
+    margin: 0.5rem; }
+  .note__bottomElements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    position: absolute;
+    bottom: 2rem; }
+  .note__editButton {
+    font-size: 1.2rem;
+    align-self: flex-end;
+    justify-items: flex-end;
+    padding: 1rem;
+    color: #fff;
+    background-color: #000;
+    border-radius: 1000px; }
+
+.sidebar {
+  flex: 0 0 8vw;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: #f3f3f3;
   padding: 1.5rem;
   align-items: center; }
   .sidebar__logo {

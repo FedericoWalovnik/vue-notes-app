@@ -1,5 +1,32 @@
 .note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: $postit-cyan;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   padding: 1rem;
+
+  &__deleteButton {
+    align-self: flex-end;
+    margin: 0.5rem;
+  }
+
+  &__bottomElements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    position: absolute;
+    bottom: 2rem;
+  }
+
+  &__editButton {
+    font-size: 1.2rem;
+    align-self: flex-end;
+    justify-items: flex-end;
+    padding: 1rem;
+    color: $white;
+    background-color: $black;
+    border-radius: 1000px;
+  }
 }
