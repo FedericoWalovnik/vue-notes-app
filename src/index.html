@@ -74,24 +74,14 @@
                 <h2 class="title-secundary content__messageEmpty">Hey! add some notes don't be shy!</h2>
             </div>
             <div v-else class="notes-container">
-                <div class="note backgroundColor_green">
+                <div v-for="(note, index) in notes" class="note" :class="`backgroundColor_${note.color}`">
                     <i class="note__deleteButton fas fa-times"></i>
-                    <p class="paragraph-principal">Here is where the user will put the content of the note. The note still have space so I will continue to put content... O I think I have more space.</p>
+                    <p class="paragraph-principal">{{note.text}}</p>
                     <div class="note__bottomElements">
-                        <p class="paragraph-secundary">Dec 10, 2020</p>
+                        <p class="paragraph-secundary">{{note.date}}</p>
                         <i class="note__editButton fas fa-pen"></i>
                     </div>
-                </div>
-                <div class="note backgroundColor_pink">
-                    <i class="note__deleteButton fas fa-times"></i>
-                    <p class="paragraph-principal">Here is where the user will put the content of the note. The note still have space so
-                        I will continue to put content... O I think I have more space.</p>
-                    <div class="note__bottomElements">
-                        <p class="paragraph-secundary">Dec 10, 2020</p>
-                        <i class="note__editButton fas fa-pen"></i>
-                    </div>
-                </div>
-                
+                </div>               
             
             </div>
         </section>
