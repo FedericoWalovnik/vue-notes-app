@@ -56,6 +56,8 @@ body {
 .content {
   margin: 6.5rem 5rem 0 5rem;
   flex: 1 1 90vw; }
+  .content__messageEmpty {
+    margin-top: 3rem; }
 
 .notes-container {
   margin-top: 3.5rem;

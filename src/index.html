@@ -70,7 +70,10 @@
         </section>
         <section class="content">
             <h1 class="title-principal">My Notes</h1>
-            <div class="notes-container">
+            <div v-if="notes.length === 0">
+                <h2 class="title-secundary content__messageEmpty">Hey! add some notes don't be shy!</h2>
+            </div>
+            <div v-else class="notes-container">
                 <div class="note backgroundColor_green">
                     <i class="note__deleteButton fas fa-times"></i>
                     <p class="paragraph-principal">Here is where the user will put the content of the note. The note still have space so I will continue to put content... O I think I have more space.</p>
