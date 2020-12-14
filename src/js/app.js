@@ -28,6 +28,7 @@ const app = Vue.createApp({
           color: "pink",
         },
       ],
+      userNoteInput: "",
       modalVisible: false,
     };
   },
@@ -44,6 +45,9 @@ const app = Vue.createApp({
     toggleModal() {
       this.modalVisible = !this.modalVisible;
       console.log(this.modalVisible);
+    },
+    deleteNote(index) {
+      this.notes.splice(index, 1);
     },
   },
 });

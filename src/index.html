@@ -22,7 +22,7 @@
             <i class="inputModal__closeButton fas fa-times" @click="toggleModal()"></i>
             <div class="inputModal__title title-secundary">Add a note</div>
             <label for="textarea" class="inputModal__label">Note:</label>
-            <textarea placeholder="Put your thoughts in a note..." name="textarea" class="inputModal__textArea" maxlength="150"></textarea>
+            <textarea placeholder="Put your thoughts in a note..." name="textarea" class="inputModal__textArea" maxlength="150" v-model="userNoteInput"></textarea>
 
             <label for="color" class="inputModal__label">Color:</label>
             <div class="inputModal__radio">
@@ -75,7 +75,7 @@
             </div>
             <div v-else class="notes-container">
                 <div v-for="(note, index) in notes" class="note" :class="`backgroundColor_${note.color}`">
-                    <i class="note__deleteButton fas fa-times"></i>
+                    <i class="note__deleteButton fas fa-times" @click="deleteNote(index)"></i>
                     <p class="paragraph-principal">{{note.text}}</p>
                     <div class="note__bottomElements">
                         <p class="paragraph-secundary">{{note.date}}</p>

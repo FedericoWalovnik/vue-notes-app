@@ -67,7 +67,7 @@ body {
   grid-auto-rows: 30vh; }
   @media (max-width: 37.5em) {
     .notes-container {
-      grid-template-columns: repeat(auto-fit, 1fr); } }
+      grid-template-columns: repeat(auto-fit, 80%); } }
 
 .inputModal {
   padding: 3rem;
