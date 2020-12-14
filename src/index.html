@@ -11,14 +11,15 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="js/app.js" defer></script>
 
     <title>Vue PostIt</title>
 </head>
 <body>
     <Section class="app" id="vueInteractivity">
-        <div class="backdrop"></div>
-        <div class="inputModal">
-            <i class="inputModal__closeButton fas fa-times"></i>
+        <div class="backdrop" @click="toggleModal()" :class="visible"></div>
+        <div class="inputModal" :class="visible">
+            <i class="inputModal__closeButton fas fa-times" @click="toggleModal()"></i>
             <div class="inputModal__title title-secundary">Add a note</div>
             <label for="textarea" class="inputModal__label">Note:</label>
             <textarea placeholder="Put your thoughts in a note..." name="textarea" class="inputModal__textArea" maxlength="150"></textarea>

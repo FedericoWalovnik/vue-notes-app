@@ -5,15 +5,19 @@ const app = Vue.createApp({
       modalVisible: false,
     };
   },
-  computed: {},
+  computed: {
+    visible() {
+      if (this.modalVisible) {
+        return { visible: true };
+      } else {
+        return { hidden: true };
+      }
+    },
+  },
   methods: {
     toggleModal() {
       this.modalVisible = !this.modalVisible;
-      if (this.modalVisible) {
-        return { modalVisible: true };
-      } else {
-        return { modalHidden: true };
-      }
+      console.log(this.modalVisible);
     },
   },
 });
