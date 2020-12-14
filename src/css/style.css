@@ -67,39 +67,6 @@ body {
     .notes-container {
       grid-template-columns: repeat(auto-fit, 1fr); } }
 
-.custom-radios div {
-  display: inline-block; }
-
-.custom-radios input[type="radio"] {
-  display: none; }
-  .custom-radios input[type="radio"] + label span {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: -1px 4px 0 0;
-    vertical-align: middle;
-    cursor: pointer;
-    border-radius: 50%;
-    border: 2px solid #ffffff;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: center;
-    line-height: 44px; }
-    .custom-radios input[type="radio"] + label span img {
-      opacity: 0;
-      transition: all 0.3s ease; }
-  .custom-radios input[type="radio"]#color-1 + label span {
-    background-color: #73cac4; }
-  .custom-radios input[type="radio"]#color-2 + label span {
-    background-color: #e3e546; }
-  .custom-radios input[type="radio"]#color-3 + label span {
-    background-color: #f69dbb; }
-  .custom-radios input[type="radio"]#color-4 + label span {
-    background-color: #fbad4b; }
-  .custom-radios input[type="radio"]:checked + label span img {
-    opacity: 1; }
-
 .inputModal {
   padding: 3rem;
   background-color: white;
@@ -111,8 +78,14 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 40vw;
-  height: 40vh;
+  height: 50vh;
   z-index: 2; }
+  @media only screen and (max-width: 56.25em) {
+    .inputModal {
+      width: 70vw; } }
+  @media (max-width: 37.5em) {
+    .inputModal {
+      width: 80vw; } }
   .inputModal__textArea {
     height: 35%;
     width: 100%;
@@ -139,6 +112,10 @@ body {
       background-position: center;
       text-align: center;
       line-height: 3.4rem; }
+      @media only screen and (max-width: 56.25em) {
+        .inputModal__radio input[type="radio"] + label span {
+          width: 4rem;
+          height: 4rem; } }
       .inputModal__radio input[type="radio"] + label span img {
         margin-left: 0.5rem;
         opacity: 0;
@@ -153,6 +130,9 @@ body {
       background-color: #fbad4b; }
     .inputModal__radio input[type="radio"]:checked + label span img {
       opacity: 1; }
+  .inputModal__closeButton {
+    position: absolute;
+    align-self: flex-end; }
   .inputModal__button {
     align-self: flex-end;
     justify-self: flex-end;
@@ -162,10 +142,19 @@ body {
     background-color: #000;
     color: #fff;
     border-radius: 10rem;
-    width: 20%;
     height: 3.5rem;
     cursor: pointer;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    padding: 1rem 4rem; }
+    @media only screen and (max-width: 56.25em) {
+      .inputModal__button {
+        width: 30vw;
+        align-self: center;
+        margin-top: 4rem;
+        padding: 2rem; } }
+    @media (max-width: 37.5em) {
+      .inputModal__button {
+        width: 50vw; } }
   .inputModal__button:hover {
     background-color: #73cac4;
     color: #000; }

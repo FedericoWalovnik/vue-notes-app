@@ -1,56 +1,3 @@
-.custom-radios {
-  div {
-    display: inline-block;
-  }
-
-  input[type="radio"] {
-    display: none;
-
-    + label {
-      span {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        margin: -1px 4px 0 0;
-        vertical-align: middle;
-        cursor: pointer;
-        border-radius: 50%;
-        border: 2px solid #ffffff;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
-        background-repeat: no-repeat;
-        background-position: center;
-        text-align: center;
-        line-height: 44px;
-
-        img {
-          opacity: 0;
-          transition: all 0.3s ease;
-        }
-      }
-    }
-
-    &#color-1 + label span {
-      background-color: $postit-cyan;
-    }
-
-    &#color-2 + label span {
-      background-color: $postit-green;
-    }
-
-    &#color-3 + label span {
-      background-color: $postit-pink;
-    }
-
-    &#color-4 + label span {
-      background-color: $postit-orange;
-    }
-
-    &:checked + label span img {
-      opacity: 1;
-    }
-  }
-}
-
 .inputModal {
   padding: 3rem;
   background-color: white;
@@ -62,8 +9,16 @@
   left: 50%;
   transform: translateX(-50%);
   width: 40vw;
-  height: 40vh;
+  height: 50vh;
   z-index: 2;
+
+  @include respond(tab-port) {
+    width: 70vw;
+  }
+
+  @include respond(phone) {
+    width: 80vw;
+  }
 
   &__textArea {
     height: 35%;
@@ -101,6 +56,11 @@
           text-align: center;
           line-height: 3.4rem;
 
+          @include respond(tab-port) {
+            width: 4rem;
+            height: 4rem;
+          }
+
           img {
             margin-left: 0.5rem;
             opacity: 0;
@@ -131,6 +91,11 @@
     }
   }
 
+  &__closeButton {
+    position: absolute;
+    align-self: flex-end;
+  }
+
   &__button {
     align-self: flex-end;
     justify-self: flex-end;
@@ -140,10 +105,21 @@
     background-color: $black;
     color: $white;
     border-radius: 10rem;
-    width: 20%;
     height: 3.5rem;
     cursor: pointer;
     transition: all 0.3s;
+    padding: 1rem 4rem;
+
+    @include respond(tab-port) {
+      width: 30vw;
+      align-self: center;
+      margin-top: 4rem;
+      padding: 2rem;
+    }
+
+    @include respond(phone) {
+      width: 50vw;
+    }
   }
 
   &__button:hover {
