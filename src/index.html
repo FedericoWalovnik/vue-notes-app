@@ -15,15 +15,61 @@
     <title>Vue PostIt</title>
 </head>
 <body>
-    <Section class="app">
+    <Section class="app" id="vueInteractivity">
+        <div class="backdrop"></div>
+        <div class="inputModal">
+            <div class="inputModal__title title-secundary">Add a note</div>
+            <label for="textarea" class="inputModal__label">Note:</label>
+            <textarea placeholder="Put your thoughts in a note..." name="textarea" class="inputModal__textArea" maxlength="150"></textarea>
+
+            <label for="color" class="inputModal__label">Color:</label>
+            <div class="inputModal__radio">
+                <div>
+                    <input type="radio" id="color-1" name="color" value="cyan" checked>
+                    <label for="color-1">
+                        <span>
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                        </span>
+                    </label>
+                </div>
+            
+                <div>
+                    <input type="radio" id="color-2" name="color" value="green">
+                    <label for="color-2">
+                        <span>
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                        </span>
+                    </label>
+                </div>
+            
+                <div>
+                    <input type="radio" id="color-3" name="color" value="pink">
+                    <label for="color-3">
+                        <span>
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                        </span>
+                    </label>
+                </div>
+            
+                <div>
+                    <input type="radio" id="color-4" name="color" value="orange">
+                    <label for="color-4">
+                        <span>
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="inputModal__button">Add note</div>
+        </div>
         <section class="sidebar">
             <p class="sidebar__logo">Vue PostIt</p>
-            <i class="sidebar__addButton fas fa-plus-circle"></i>
+            <i class="sidebar__addButton fas fa-plus-circle" @click="toggleModal()" ></i>
         </section>
         <section class="content">
             <h1 class="title-principal">My Notes</h1>
             <div class="notes-container">
-                <div class="note">
+                <div class="note backgroundColor_green">
                     <i class="note__deleteButton fas fa-times"></i>
                     <p class="paragraph-principal">Here is where the user will put the content of the note. The note still have space so I will continue to put content... O I think I have more space.</p>
                     <div class="note__bottomElements">
@@ -31,7 +77,7 @@
                         <i class="note__editButton fas fa-pen"></i>
                     </div>
                 </div>
-                <div class="note">
+                <div class="note backgroundColor_pink">
                     <i class="note__deleteButton fas fa-times"></i>
                     <p class="paragraph-principal">Here is where the user will put the content of the note. The note still have space so
                         I will continue to put content... O I think I have more space.</p>

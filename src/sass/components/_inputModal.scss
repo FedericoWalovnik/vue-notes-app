@@ -1,0 +1,169 @@
+.custom-radios {
+  div {
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    + label {
+      span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        line-height: 44px;
+
+        img {
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    &#color-1 + label span {
+      background-color: $postit-cyan;
+    }
+
+    &#color-2 + label span {
+      background-color: $postit-green;
+    }
+
+    &#color-3 + label span {
+      background-color: $postit-pink;
+    }
+
+    &#color-4 + label span {
+      background-color: $postit-orange;
+    }
+
+    &:checked + label span img {
+      opacity: 1;
+    }
+  }
+}
+
+.inputModal {
+  padding: 3rem;
+  background-color: white;
+  border-radius: 1rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  height: 40vh;
+  z-index: 2;
+
+  &__textArea {
+    height: 35%;
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+  }
+
+  &__label {
+    margin-bottom: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  &__radio {
+    div {
+      display: inline-block;
+    }
+
+    input[type="radio"] {
+      display: none;
+
+      + label {
+        span {
+          display: flex;
+          width: 3rem;
+          height: 3rem;
+          margin: -1px 4px 0 0;
+          vertical-align: middle;
+          cursor: pointer;
+          border-radius: 50%;
+          border: 1px solid #ffffff;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+          background-repeat: no-repeat;
+          background-position: center;
+          text-align: center;
+          line-height: 3.4rem;
+
+          img {
+            margin-left: 0.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      &#color-1 + label span {
+        background-color: $postit-cyan;
+      }
+
+      &#color-2 + label span {
+        background-color: $postit-green;
+      }
+
+      &#color-3 + label span {
+        background-color: $postit-pink;
+      }
+
+      &#color-4 + label span {
+        background-color: $postit-orange;
+      }
+
+      &:checked + label span img {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    color: $white;
+    border-radius: 10rem;
+    width: 20%;
+    height: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &__button:hover {
+    background-color: $hoverstate-color;
+    color: $black;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 1;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

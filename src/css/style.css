@@ -41,6 +41,10 @@ body {
   font-size: 4rem;
   font-weight: 600; }
 
+.title-secundary {
+  font-size: 2.5rem;
+  font-weight: 600; }
+
 .paragraph-principal {
   font-size: 1.6rem;
   font-weight: 400; }
@@ -63,11 +67,126 @@ body {
     .notes-container {
       grid-template-columns: repeat(auto-fit, 1fr); } }
 
+.custom-radios div {
+  display: inline-block; }
+
+.custom-radios input[type="radio"] {
+  display: none; }
+  .custom-radios input[type="radio"] + label span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    line-height: 44px; }
+    .custom-radios input[type="radio"] + label span img {
+      opacity: 0;
+      transition: all 0.3s ease; }
+  .custom-radios input[type="radio"]#color-1 + label span {
+    background-color: #73cac4; }
+  .custom-radios input[type="radio"]#color-2 + label span {
+    background-color: #e3e546; }
+  .custom-radios input[type="radio"]#color-3 + label span {
+    background-color: #f69dbb; }
+  .custom-radios input[type="radio"]#color-4 + label span {
+    background-color: #fbad4b; }
+  .custom-radios input[type="radio"]:checked + label span img {
+    opacity: 1; }
+
+.inputModal {
+  padding: 3rem;
+  background-color: white;
+  border-radius: 1rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  height: 40vh;
+  z-index: 2; }
+  .inputModal__textArea {
+    height: 35%;
+    width: 100%;
+    resize: none;
+    padding: 1rem; }
+  .inputModal__label {
+    margin-bottom: 0.8rem;
+    margin-top: 1.2rem; }
+  .inputModal__radio div {
+    display: inline-block; }
+  .inputModal__radio input[type="radio"] {
+    display: none; }
+    .inputModal__radio input[type="radio"] + label span {
+      display: flex;
+      width: 3rem;
+      height: 3rem;
+      margin: -1px 4px 0 0;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 1px solid #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      line-height: 3.4rem; }
+      .inputModal__radio input[type="radio"] + label span img {
+        margin-left: 0.5rem;
+        opacity: 0;
+        transition: all 0.3s ease; }
+    .inputModal__radio input[type="radio"]#color-1 + label span {
+      background-color: #73cac4; }
+    .inputModal__radio input[type="radio"]#color-2 + label span {
+      background-color: #e3e546; }
+    .inputModal__radio input[type="radio"]#color-3 + label span {
+      background-color: #f69dbb; }
+    .inputModal__radio input[type="radio"]#color-4 + label span {
+      background-color: #fbad4b; }
+    .inputModal__radio input[type="radio"]:checked + label span img {
+      opacity: 1; }
+  .inputModal__button {
+    align-self: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10rem;
+    width: 20%;
+    height: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s; }
+  .inputModal__button:hover {
+    background-color: #73cac4;
+    color: #000; }
+
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+.visible {
+  display: block; }
+
+.hidden {
+  display: none; }
+
 .note {
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #73cac4;
   border-radius: 0.7rem;
   padding: 1rem; }
   .note__deleteButton {
@@ -88,6 +207,18 @@ body {
     color: #fff;
     background-color: #000;
     border-radius: 1000px; }
+
+.backgroundColor_cyan {
+  background-color: #73cac4; }
+
+.backgroundColor_green {
+  background-color: #e3e546; }
+
+.backgroundColor_pink {
+  background-color: #f69dbb; }
+
+.backgroundColor_orange {
+  background-color: #fbad4b; }
 
 .sidebar {
   flex: 0 0 8vw;

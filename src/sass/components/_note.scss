@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $postit-cyan;
   border-radius: 0.7rem;
   padding: 1rem;
 
@@ -29,4 +28,17 @@
     background-color: $black;
     border-radius: 1000px;
   }
+}
+
+.backgroundColor_cyan {
+  background-color: $postit-cyan;
+}
+.backgroundColor_green {
+  background-color: $postit-green;
+}
+.backgroundColor_pink {
+  background-color: $postit-pink;
+}
+.backgroundColor_orange {
+  background-color: $postit-orange;
 }
