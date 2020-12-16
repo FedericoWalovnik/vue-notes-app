@@ -70,8 +70,9 @@
         </section>
         <section class="content">
             <h1 class="title-principal">My Notes</h1>
-            <div v-if="notes.length === 0">
+            <div v-if="notes.length === 0" class="empty-state">
                 <h2 class="title-secundary content__messageEmpty">Hey! add some notes don't be shy!</h2>
+                <img src="img/undraw_Taking_notes_re_bnaf.svg" alt="empty notes ilustration" class="empty-state__ilustration">
             </div>
             <div v-else class="notes-container">
                 <div v-for="(note, index) in notes" class="note" :class="`backgroundColor_${note.color}`">

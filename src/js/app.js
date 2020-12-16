@@ -1,33 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      notes: [
-        {
-          text: "Hey hey hey, this note is comming from Vue. How cool is this?",
-          date: "Dec 14, 2020",
-          color: "orange",
-        },
-        {
-          text: "Hey this is another note comming from Vue",
-          date: "Dec 14, 2020",
-          color: "pink",
-        },
-        {
-          text: "There is no two without a three",
-          date: "Dec 14, 2020",
-          color: "pink",
-        },
-        {
-          text: "There is no two without a three",
-          date: "Dec 14, 2020",
-          color: "green",
-        },
-        {
-          text: "There is no two without a three",
-          date: "Dec 14, 2020",
-          color: "pink",
-        },
-      ],
+      notes: [],
       userTextInput: "",
       userColorInput: "cyan",
       modalVisible: false,

@@ -1,0 +1,21 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+
+  &__ilustration {
+    margin-top: 12vh;
+    margin-left: -10rem;
+    width: 32vw;
+    align-self: center;
+
+    @include respond(tab-port) {
+      margin-top: 10vh;
+      width: 62vw;
+    }
+
+    @include respond(phone) {
+      margin-top: 8vh;
+      width: 75vw;
+    }
+  }
+}

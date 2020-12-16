@@ -69,6 +69,23 @@ body {
     .notes-container {
       grid-template-columns: repeat(auto-fit, 80%); } }
 
+.empty-state {
+  display: flex;
+  flex-direction: column; }
+  .empty-state__ilustration {
+    margin-top: 12vh;
+    margin-left: -10rem;
+    width: 32vw;
+    align-self: center; }
+    @media only screen and (max-width: 56.25em) {
+      .empty-state__ilustration {
+        margin-top: 10vh;
+        width: 62vw; } }
+    @media (max-width: 37.5em) {
+      .empty-state__ilustration {
+        margin-top: 8vh;
+        width: 75vw; } }
+
 .inputModal {
   padding: 3rem;
   background-color: white;
