@@ -30,10 +30,15 @@ const app = Vue.createApp({
         date: `${this.formatDate(now)}`,
         color: this.userColorInput,
       };
-      this.notes.push(userInputs);
-      this.userTextInput = "";
-      this.userColorInput = "cyan";
-      this.toggleModal();
+
+      if (this.validateText(this.userTextInput)) {
+        this.notes.push(userInputs);
+        this.userTextInput = "";
+        this.userColorInput = "cyan";
+        this.toggleModal();
+      } else {
+        alert("Your note should be more than 3 characters!");
+      }
     },
     formatDate(now) {
       let month = now.getMonth() + 1;
@@ -69,6 +74,13 @@ const app = Vue.createApp({
 
       let formatedDate = `${month} ${day}, ${year}`;
       return formatedDate;
+    },
+    validateText(userInput) {
+      if (userInput.length > 3) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 });
