@@ -8,6 +8,12 @@
   &__deleteButton {
     align-self: flex-end;
     margin: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &__deleteButton:hover {
+    transform: rotate(-180deg);
   }
 
   &__bottomElements {

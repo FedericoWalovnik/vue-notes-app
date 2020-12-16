@@ -28,7 +28,8 @@ const app = Vue.createApp({
           color: "pink",
         },
       ],
-      userNoteInput: "",
+      userTextInput: "",
+      userColorInput: "",
       modalVisible: false,
     };
   },
@@ -44,10 +45,21 @@ const app = Vue.createApp({
   methods: {
     toggleModal() {
       this.modalVisible = !this.modalVisible;
-      console.log(this.modalVisible);
+      this.userTextInput = "";
+      this.userColorInput = "";
     },
     deleteNote(index) {
       this.notes.splice(index, 1);
+    },
+    addNote() {
+      const date = new Date();
+      const userInputs = {
+        text: this.userTextInput,
+        date: date.getFullYear(),
+        color: this.userColorInput,
+      };
+      this.notes.push(userInputs);
+      this.toggleModal();
     },
   },
 });
