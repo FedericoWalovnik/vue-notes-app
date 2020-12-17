@@ -1,10 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      notes: [
-        { text: "hola soy una nota", color: "green", date: "dec 17, 2020" },
-        { text: "hola soy una nota", color: "cyan", date: "dec 17, 2020" },
-      ],
+      notes: [],
       textInput: "",
       userColorInput: "cyan",
       modalVisible: false,
@@ -20,6 +17,15 @@ const app = Vue.createApp({
         return { hidden: true };
       }
     },
+  },
+  mounted() {
+    if (localStorage.getItem("notes")) {
+      try {
+        this.notes = JSON.parse(localStorage.getItem("notes"));
+      } catch (e) {
+        localStorage.removeItem("notes");
+      }
+    }
   },
   methods: {
     toggleModal() {
@@ -43,6 +49,7 @@ const app = Vue.createApp({
     },
     deleteNote(index) {
       this.notes.splice(index, 1);
+      this.saveNotes();
     },
     addNote() {
       const now = new Date();
@@ -56,6 +63,7 @@ const app = Vue.createApp({
         this.notes.push(userInputs);
         this.textInput = "";
         this.userColorInput = "cyan";
+        this.saveNotes();
         this.toggleModal();
       } else {
         alert("Your note should be more than 3 characters!");
@@ -65,6 +73,7 @@ const app = Vue.createApp({
       this.notes[index].text = this.textInput;
       this.notes[index].color = this.userColorInput;
       this.textInput = "";
+      this.saveNotes();
       this.toggleModal();
     },
     formatDate(now) {
@@ -108,6 +117,10 @@ const app = Vue.createApp({
       } else {
         return false;
       }
+    },
+    saveNotes() {
+      let parsed = JSON.stringify(this.notes);
+      localStorage.setItem("notes", parsed);
     },
   },
 });
