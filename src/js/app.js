@@ -1,10 +1,15 @@
 const app = Vue.createApp({
   data() {
     return {
-      notes: [],
-      userTextInput: "",
+      notes: [
+        { text: "hola soy una nota", color: "green", date: "dec 17, 2020" },
+        { text: "hola soy una nota", color: "cyan", date: "dec 17, 2020" },
+      ],
+      textInput: "",
       userColorInput: "cyan",
       modalVisible: false,
+      action: "add",
+      indexNote: "",
     };
   },
   computed: {
@@ -20,25 +25,47 @@ const app = Vue.createApp({
     toggleModal() {
       this.modalVisible = !this.modalVisible;
     },
+    handleOpenButtons(event, inputAction) {
+      this.action = inputAction;
+      if (inputAction === "edit") {
+        this.indexNote = event.target.getAttribute("index");
+        this.textInput = this.notes[this.indexNote].text;
+      }
+      this.toggleModal();
+    },
+    handleSubmitButton() {
+      if (this.action === "add") {
+        this.addNote();
+      } else if (this.action === "edit") {
+        console.log(this.indexNote);
+        this.editNote(this.indexNote);
+      }
+    },
     deleteNote(index) {
       this.notes.splice(index, 1);
     },
     addNote() {
       const now = new Date();
       const userInputs = {
-        text: this.userTextInput,
+        text: this.textInput,
         date: `${this.formatDate(now)}`,
         color: this.userColorInput,
       };
 
-      if (this.validateText(this.userTextInput)) {
+      if (this.validateText(this.textInput)) {
         this.notes.push(userInputs);
-        this.userTextInput = "";
+        this.textInput = "";
         this.userColorInput = "cyan";
         this.toggleModal();
       } else {
         alert("Your note should be more than 3 characters!");
       }
+    },
+    editNote(index) {
+      this.notes[index].text = this.textInput;
+      this.notes[index].color = this.userColorInput;
+      this.textInput = "";
+      this.toggleModal();
     },
     formatDate(now) {
       let month = now.getMonth() + 1;

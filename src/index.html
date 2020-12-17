@@ -22,7 +22,7 @@
             <i class="inputModal__closeButton fas fa-times" @click="toggleModal()"></i>
             <div class="inputModal__title title-secundary">Add a note</div>
             <label for="textarea" class="inputModal__label">Note:</label>
-            <textarea placeholder="Put your thoughts in a note..." name="textarea" class="inputModal__textArea" maxlength="150" minlength="5" v-model="userTextInput"></textarea>
+            <textarea placeholder="Put your thoughts in a note..." name="textarea" class="inputModal__textArea" maxlength="150" minlength="5" v-model="textInput" ></textarea>
 
             <label for="color" class="inputModal__label">Color:</label>
             <div class="inputModal__radio">
@@ -62,11 +62,11 @@
                     </label>
                 </div>
             </div>
-            <div class="inputModal__button" type="submit" @click="addNote()">Add note</div>
+            <div class="inputModal__button" type="submit" @click="handleSubmitButton()">{{action}} note</div>
         </div>
         <section class="sidebar">
             <p class="sidebar__logo">Vue PostIt</p>
-            <i class="sidebar__addButton fas fa-plus-circle" @click="toggleModal()" ></i>
+            <i class="sidebar__addButton fas fa-plus-circle" @click="handleOpenButtons($event,'add')" ></i>
         </section>
         <section class="content">
             <h1 class="title-principal">My Notes</h1>
@@ -80,9 +80,9 @@
                     <p class="paragraph-principal">{{note.text}}</p>
                     <div class="note__bottomElements">
                         <p class="paragraph-secundary">{{note.date}}</p>
-                        <i class="note__editButton fas fa-pen"></i>
+                        <i class="note__editButton fas fa-pen" @click="handleOpenButtons($event, 'edit')" :index="index"></i>
                     </div>
-                </div>               
+                </div>
             </div>
         </section>
     </Section>

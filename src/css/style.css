@@ -219,7 +219,8 @@ body {
     padding: 1rem;
     color: #fff;
     background-color: #000;
-    border-radius: 1000px; }
+    border-radius: 1000px;
+    cursor: pointer; }
 
 .backgroundColor_cyan {
   background-color: #73cac4; }
