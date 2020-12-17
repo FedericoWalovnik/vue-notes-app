@@ -33,6 +33,9 @@ html {
 .app {
   display: flex;
   font-size: 1.6rem; }
+  @media only screen and (max-width: 56.25em) {
+    .app {
+      flex-direction: column; } }
 
 body {
   font-family: "Montserrat", sans-serif; }
@@ -242,14 +245,28 @@ body {
   background-color: #f3f3f3;
   padding: 1.5rem;
   align-items: center; }
+  @media only screen and (max-width: 56.25em) {
+    .sidebar {
+      flex-direction: row;
+      height: 10vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 6rem; } }
   .sidebar__logo {
     font-weight: 600;
     font-size: 1.5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .sidebar__logo {
+        font-size: 2rem; } }
   .sidebar__addButton {
     font-size: 2.8rem;
     padding-top: 4rem;
     cursor: pointer;
     transition: all 0.2s; }
+    @media only screen and (max-width: 56.25em) {
+      .sidebar__addButton {
+        padding-top: 1rem; } }
   .sidebar__addButton:hover {
     font-size: 3.2rem;
     color: #73cac4; }

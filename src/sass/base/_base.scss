@@ -25,4 +25,8 @@ html {
 .app {
   display: flex;
   font-size: 1.6rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
 }
