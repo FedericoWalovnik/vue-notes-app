@@ -59,6 +59,9 @@ body {
 .content {
   margin: 6.5rem 5rem 0 5rem;
   flex: 1 1 90vw; }
+  @media (max-width: 37.5em) {
+    .content {
+      justify-content: center; } }
   .content__messageEmpty {
     margin-top: 3rem; }
 
@@ -70,7 +73,7 @@ body {
   grid-auto-rows: 30vh; }
   @media (max-width: 37.5em) {
     .notes-container {
-      grid-template-columns: repeat(auto-fit, 80%); } }
+      grid-template-columns: repeat(auto-fit, 90%); } }
 
 .empty-state {
   display: flex;
@@ -104,7 +107,9 @@ body {
   z-index: 2; }
   @media only screen and (max-width: 56.25em) {
     .inputModal {
-      width: 70vw; } }
+      width: 70vw;
+      top: 50%;
+      transform: translate(-50%, -50%); } }
   @media (max-width: 37.5em) {
     .inputModal {
       width: 80vw; } }

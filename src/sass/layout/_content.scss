@@ -2,6 +2,10 @@
   margin: 6.5rem 5rem 0 5rem;
   flex: 1 1 90vw;
 
+  @include respond(phone) {
+    justify-content: center;
+  }
+
   &__messageEmpty {
     margin-top: 3rem;
   }
